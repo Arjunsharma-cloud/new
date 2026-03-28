@@ -21,21 +21,25 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 z-50 w-full border-b border-white/20 bg-white/70 py-3 backdrop-blur-lg transition-all ${
-        shadow ? "shadow-xl" : "shadow-none"
+      className={`fixed top-0 z-50 w-full border-b border-white/25 bg-white/80 py-2 backdrop-blur-lg transition-all ${
+        shadow ? "shadow-lg" : "shadow-none"
       }`}
     >
-      <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-6 md:px-10">
-        <div className="flex items-center gap-4 text-sm font-semibold text-slate-700">
-          <div className="rounded-xl border border-slate-200 bg-slate-50 px-3 py-1">
-            IIIT LOGO HERE
-          </div>
+      <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-4 md:px-8">
+        <div className="flex items-center gap-3 text-sm font-semibold text-slate-700">
+          <img
+            src="/images/IIITkotaicon.png"
+            alt="IIIT Kota Icon"
+            className="h-24 w-56 object-contain"
+          />
         </div>
-        <div className="flex items-center gap-4 whitespace-nowrap text-sm font-medium text-slate-600">
+        <div className="flex items-center gap-3 whitespace-nowrap text-sm font-medium text-slate-600">
           <div className="hidden items-center gap-2 md:flex">
-            <div className="rounded-xl border border-slate-200 bg-slate-50 px-3 py-1">
-              <img src="D:\CODE\new\images\GDG.png" alt="GDG Logo" />
-            </div>
+            <img
+              src="/images/GDGicon.png"
+              alt="GDG Icon"
+              className="h-20 w-44 object-contain"
+            />
           </div>
           <nav className="flex items-center gap-4">
             {sections.map((item) => (

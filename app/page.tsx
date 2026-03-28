@@ -63,10 +63,19 @@ export default function Home() {
   return (
     <div className="bg-slate-50 text-slate-800">
       <Navbar />
-      <main className="pt-24">
+      <main className="pt-[7rem]">
+        <div className="w-full overflow-hidden bg-slate-50">
+          <img
+            src="/images/GDGbaner.png"
+            alt="GDG Banner"
+            className="h-64 w-full object-contain"
+            style={{ minHeight: "16rem", backgroundColor: "#0f172a" }}
+          />
+        </div>
+
         <section
           id="home"
-          className="grid min-h-screen w-full max-w-7xl gap-12 px-6 py-16 md:grid-cols-2 md:px-10"
+          className="grid min-h-screen w-full max-w-7xl gap-12 px-6 py-12 md:grid-cols-2 md:px-10"
         >
           <motion.div
             initial={{ opacity: 0, x: -45 }}
@@ -107,21 +116,27 @@ export default function Home() {
               hidden: {},
               visible: { transition: { staggerChildren: 0.12 } },
             }}
-            className="grid grid-cols-2 gap-4"
+            className="grid grid-cols-1 gap-4 md:grid-cols-2"
           >
-            {Array.from({ length: 4 }).map((_, idx) => (
+            {[
+              "/collage/cloudstudy.jpeg",
+              "/collage/googlesol.jpeg",
+              "/collage/webrelay.jpeg",
+              "/collage/winterBreak.jpeg",
+            ].map((src, idx) => (
               <motion.div
                 key={idx}
-                initial={{ opacity: 0, x: 40 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{
-                  duration: 0.6,
-                  ease: "easeOut",
-                  delay: idx * 0.1,
-                }}
-                className="flex h-40 items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-white/80 text-sm font-semibold text-slate-500"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.4 }}
+                transition={{ duration: 0.5, delay: idx * 0.08 }}
+                className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-lg"
               >
-                EVENT IMAGE {idx + 1}
+                <img
+                  src={src}
+                  alt={`Collage ${idx + 1}`}
+                  className="h-80 w-full object-cover"
+                />
               </motion.div>
             ))}
           </motion.div>
@@ -174,7 +189,7 @@ export default function Home() {
         >
           <div className="grid gap-10">
             <motion.div
-              className="grid gap-6 rounded-2xl border border-transparent bg-slate-50 p-6 md:grid-cols-2"
+              className="grid gap-6 rounded-2xl border border-transparent bg-white p-6 md:grid-cols-2"
               initial={{ opacity: 0, y: 25 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
@@ -190,42 +205,36 @@ export default function Home() {
                   </span>
                 </div>
                 <p className="mb-4 text-slate-700">
-                  Participants are challenged to think creatively and
-                  collaboratively by brainstorming a completely random idea
-                  within a fixed time limit of one hour. During this period,
-                  teams must rapidly generate, refine, and structure their
-                  concept into something presentable and impactful. Once the
-                  ideation phase is complete, each team presents their idea to
-                  an audience of GDG members, who engage in an interactive and
-                  dynamic questioning round. This round is designed in a fun,
-                  “roasting-style” format, where participants are asked sharp,
-                  thought-provoking, and sometimes humorous questions that test
-                  the depth, feasibility, and originality of their ideas. The
-                  goal is not just to defend the concept, but to demonstrate
-                  clarity of thought, adaptability, and confidence under
-                  pressure. Teams are evaluated based on multiple criteria,
-                  including creativity, practicality, presentation skills, and
-                  how effectively they handle the questioning round. At the end
-                  of the session, scores are compiled, and the team with the
-                  highest overall performance is declared the winner, making the
-                  entire experience both competitive and highly engaging.
+                  Participants collaborate to brainstorm a random idea within
+                  one hour, quickly shaping it into a clear and presentable
+                  concept. Afterward, teams present their ideas to GDG members,
+                  followed by a fun, roasting-style questioning round that tests
+                  creativity, feasibility, and clarity. Teams are evaluated on
+                  innovation, practicality, presentation, and how well they
+                  handle questions. The highest-scoring team is declared the
+                  winner, making the session both competitive and engaging.
                 </p>
               </div>
 
               <div className="grid gap-3">
-                {Array.from({ length: 3 }).map((_, idx) => (
-                  <div
-                    key={idx}
-                    className="h-20 rounded-xl border border-dashed border-slate-300 bg-slate-50 text-center text-sm font-semibold text-slate-500 flex items-center justify-center"
-                  >
-                    EVENT IMAGE {idx + 1}
-                  </div>
-                ))}
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ duration: 0.5 }}
+                  className="rounded-xl overflow-hidden bg-transparent"
+                >
+                  <img
+                    src="/images/GDGgotlatent.png"
+                    alt="GDG Got Latent Event"
+                    className="w-full h-72 object-cover"
+                  />
+                </motion.div>
               </div>
             </motion.div>
 
             <motion.div
-              className="grid gap-6 rounded-2xl border border-transparent bg-slate-50 p-6 md:grid-cols-2"
+              className="grid gap-6 rounded-2xl border border-transparent bg-white p-6 md:grid-cols-2"
               initial={{ opacity: 0, y: 25 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
@@ -241,27 +250,35 @@ export default function Home() {
                   </span>
                 </div>
                 <p className="text-slate-700">
-                  Cloud Arcade 2025–26 is a Google Cloud–hosted learning program
-                  designed to provide students with hands-on experience in
-                  real-world cloud technologies. Through a structured series of
-                  interactive labs, participants explore core concepts such as
-                  cloud infrastructure, deployment, data handling, and modern
-                  development workflows—all within a guided, practical
-                  environment. Participants completed lab-based challenges, and
-                  this year the program achieved Tier 1 with 100+ students
-                  finishing all labs and earning exclusive goodies.
+                  Cloud Arcade 2025–26 is a Google Cloud–hosted program that
+                  provides hands-on experience through interactive labs covering
+                  cloud infrastructure, deployment, data management, and modern
+                  workflows. Participants complete real-world challenges to
+                  build practical skills. The program fosters a learn-by-doing
+                  approach, helping students gain confidence in using cloud
+                  tools and services in practical scenarios. It also encourages
+                  consistency and problem-solving through structured lab
+                  progressions. This year, the program achieved Tier 1 status,
+                  with 100+ students successfully finishing all labs.
+                  Participants were also rewarded with exclusive Google Cloud
+                  goodies for their accomplishment.
                 </p>
               </div>
 
               <div className="grid gap-3">
-                {Array.from({ length: 3 }).map((_, idx) => (
-                  <div
-                    key={idx}
-                    className="h-20 rounded-xl border border-dashed border-slate-300 bg-slate-50 text-center text-sm font-semibold text-slate-500 flex items-center justify-center"
-                  >
-                    EVENT IMAGE {idx + 1}
-                  </div>
-                ))}
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ duration: 0.5, delay: 0.1 }}
+                  className="rounded-xl overflow-hidden bg-transparent"
+                >
+                  <img
+                    src="/images/GOOGLECLOUD.jpeg"
+                    alt="Cloud Arcade Event"
+                    className="w-full h-72 object-cover"
+                  />
+                </motion.div>
               </div>
             </motion.div>
 
@@ -282,40 +299,75 @@ export default function Home() {
                   </span>
                 </div>
                 <p className="text-slate-700">
-                  Genesis 3.0 is designed as a strategic follow-up to Cloud
-                  Arcade, bringing together all domain leads under one unified
-                  platform. The event serves as a comprehensive showcase where
-                  each domain lead introduces their respective area—ranging from
-                  development and cloud to AI, design, and beyond—providing
-                  students with a clear understanding of the opportunities
-                  within each field. Each lead presents structured insights into
-                  their domain, supported by growth graphs, real-world trends,
-                  and potential career trajectories. This data-driven approach
-                  helps participants visualize learning paths, industry demand,
-                  and the long-term scope of each domain, enabling more informed
-                  decision-making. To ensure active engagement, the session
-                  incorporates interactive preference polling, allowing students
-                  to express their interests in real time. This is complemented
-                  by live Q&A sessions, where participants can directly interact
-                  with domain leads, clarify doubts, and gain deeper insights
-                  into specific fields. Overall, Genesis 3.0 emphasizes
-                  collaboration, cross-domain awareness, and student-driven
-                  participation. It creates an environment where learning is not
-                  just informative but also interactive, empowering students to
-                  align their interests with the right domain and take
-                  meaningful steps forward in their technical journey.
+                  Genesis 3.0 is a follow-up to Cloud Arcade that brings all
+                  domain leads onto a single platform. Each lead introduces
+                  their domain—such as development, cloud, AI, and design—while
+                  sharing insights, growth trends, and career opportunities to
+                  help students understand each field better. The session
+                  includes interactive preference polling and live Q&A, allowing
+                  students to engage directly and explore domains based on their
+                  interests. Overall, the event focuses on collaboration,
+                  awareness, and helping students choose the right path for
+                  their technical journey.
                 </p>
               </div>
 
               <div className="grid gap-3">
-                {Array.from({ length: 3 }).map((_, idx) => (
-                  <div
-                    key={idx}
-                    className="h-20 rounded-xl border border-dashed border-slate-300 bg-slate-50 text-center text-sm font-semibold text-slate-500 flex items-center justify-center"
-                  >
-                    EVENT IMAGE {idx + 1}
-                  </div>
-                ))}
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                  className="rounded-xl overflow-hidden bg-transparent"
+                >
+                  <img
+                    src="/images/genisis.jpeg"
+                    alt="Genisis 3.0 Event"
+                    className="w-full h-72 object-cover"
+                  />
+                </motion.div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              className="grid gap-6 rounded-2xl border border-transparent bg-white p-6 md:grid-cols-2"
+              initial={{ opacity: 0, y: 25 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.45, delay: 0.3 }}
+            >
+              <div>
+                <div className="mb-4 flex items-center justify-between">
+                  <h3 className="text-2xl font-bold text-slate-900">
+                    Git Sprint
+                  </h3>
+                  <span className="rounded-full bg-blue-50 px-3 py-1 text-sm font-semibold text-blue-700">
+                    Workshop
+                  </span>
+                </div>
+                <p className="text-slate-700">
+                  Git Sprint is a 2-day workshop offering prizes, hands-on
+                  experience, quizzes, and interactive sessions teaching the
+                  working and basic fundamentals of Git and GitHub. Participants
+                  engage in practical exercises to master version control,
+                  collaboration tools, and essential workflows for developers.
+                </p>
+              </div>
+
+              <div className="grid gap-3">
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ duration: 0.5, delay: 0.3 }}
+                  className="rounded-xl overflow-hidden bg-transparent"
+                >
+                  <img
+                    src="/images/gitSprint.png"
+                    alt="Git Sprint Event"
+                    className="w-full h-72 object-cover"
+                  />
+                </motion.div>
               </div>
             </motion.div>
           </div>
@@ -332,7 +384,7 @@ export default function Home() {
                 name="Priyanshu Rohilla"
                 role="Lead"
                 year="3rd Year CSE"
-                photoLabel="PHOTO HERE"
+                photoSrc="/team/priyanshu.png"
               />
             </div>
             <div className="rounded-xl border border-slate-100 bg-slate-50 p-4">
@@ -340,53 +392,66 @@ export default function Home() {
                 name="Anshuman Tripathi"
                 role="Co-Lead"
                 year="2nd Year CSE"
-                photoLabel="PHOTO HERE"
+                photoSrc="/team/anshuman.png"
               />
             </div>
           </div>
 
-          <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             <TeamCard
               name="Dhiraj Khuswaha"
               role="Web Dev Lead"
               year="2nd Year AIDE"
+              photoSrc="/team/dhiraj.png"
             />
             <TeamCard
               name="Arjun Sharma"
               role="App Dev Lead"
               year="2nd Year CSE"
+              photoSrc="/team/arjun.png"
             />
             <TeamCard
               name="Divyanshi Purohit"
               role="AI/ML Lead"
               year="2nd Year CSE"
+              photoSrc="/team/divyasnhi.jpeg"
             />
             <TeamCard
               name="Om Upadhyay"
               role="GenAI Lead"
               year="2nd Year CSE"
+              photoSrc="/team/om.png"
             />
             <TeamCard
               name="Parvika Shekhawat"
               role="Cloud Lead"
               year="2nd Year CSE"
+              photoSrc="/team/priyanshu.png"
             />
             <TeamCard
               name="Ayush Singh"
               role="Social Media Lead"
               year="2nd Year ECE"
+              photoSrc="/team/ayush.jpeg"
             />
             <TeamCard
               name="Siddhant Dixit"
               role="Event Manager"
               year="2nd Year AIDE"
+              photoSrc="/team/siddhant.png"
             />
             <TeamCard
               name="Vishesh Goel"
               role="Event Manager"
               year="2nd Year CSE"
+              photoSrc="/team/vishesh.png"
             />
-            <TeamCard name="Akash" role="Event Manager" year="2nd Year ECE" />
+            <TeamCard
+              name="Akash"
+              role="Event Manager"
+              year="2nd Year ECE"
+              photoSrc="/team/akash.jpeg"
+            />
           </div>
         </Section>
 
@@ -395,20 +460,35 @@ export default function Home() {
           title="Contact Us"
           subtitle="Get in touch for collaborations, mentorship, and event participation."
         >
-          <div className="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm">
-            <p className="text-lg text-slate-700">
-              Email:{" "}
-              <span className="font-semibold text-slate-900">
-                <a href="priyanshurohilla001@gmail.com">
-                  priyanshurohilla001@gmail.com
+          <div className="grid gap-4 rounded-2xl border border-slate-200 bg-white p-8 shadow-sm md:grid-cols-2">
+            <div>
+              <p className="text-lg text-slate-700">
+                Email:{" "}
+                <a
+                  href="mailto:office@iiitkota.ac.in"
+                  className="font-semibold text-blue-600 hover:text-blue-800"
+                >
+                  office@iiitkota.ac.in
                 </a>
-              </span>
-            </p>
-            <div className="mt-4 flex items-center gap-3 text-2xl text-slate-500">
-              <a href="#" className="transition hover:text-blue-600">
+              </p>
+              <p className="mt-3 text-slate-700">Phone: +91 744 266 7000</p>
+              <p className="text-slate-700">
+                Address: IIIT Kota Permanent Campus
+              </p>
+            </div>
+            <div className="flex items-center justify-center gap-3 text-2xl text-slate-500">
+              <a
+                href="https://www.linkedin.com"
+                target="_blank"
+                rel="noreferrer"
+                className="transition hover:text-blue-600"
+              >
                 <FaLinkedin />
               </a>
-              <a href="#" className="transition hover:text-slate-800">
+              <a
+                href="mailto:office@iiitkota.ac.in"
+                className="transition hover:text-slate-800"
+              >
                 <FaEnvelope />
               </a>
             </div>

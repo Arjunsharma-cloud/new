@@ -7,14 +7,14 @@ type TeamCardProps = {
   name: string;
   role: string;
   year: string;
-  photoLabel?: string;
+  photoSrc?: string;
 };
 
 export default function TeamCard({
   name,
   role,
   year,
-  photoLabel = "PHOTO HERE",
+  photoSrc,
 }: TeamCardProps) {
   return (
     <motion.article
@@ -25,8 +25,16 @@ export default function TeamCard({
       transition={{ duration: 0.4, ease: "easeOut" }}
       whileHover={{ scale: 1.01 }}
     >
-      <div className="mb-4 flex h-24 items-center justify-center rounded-2xl bg-slate-50 text-center font-semibold text-slate-500">
-        {photoLabel}
+      <div className="mb-4 flex h-24 w-24 items-center justify-center rounded-full border border-slate-200 bg-white p-1 mx-auto">
+        {photoSrc ? (
+          <img
+            src={photoSrc}
+            alt={`${name} photo`}
+            className="h-full w-full rounded-full object-contain"
+          />
+        ) : (
+          <span className="text-sm font-semibold text-slate-400">Photo</span>
+        )}
       </div>
       <h4 className="text-lg font-semibold text-slate-900">{name}</h4>
       <p className="text-sm text-slate-600">{role}</p>
