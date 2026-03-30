@@ -1,6 +1,5 @@
 "use client";
 
-import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
 import { motion } from "framer-motion";
 
 type TeamCardProps = {
@@ -8,6 +7,7 @@ type TeamCardProps = {
   role: string;
   year: string;
   photoSrc?: string;
+  email: string;
 };
 
 export default function TeamCard({
@@ -15,6 +15,7 @@ export default function TeamCard({
   role,
   year,
   photoSrc,
+  email,
 }: TeamCardProps) {
   return (
     <motion.article
@@ -25,12 +26,12 @@ export default function TeamCard({
       transition={{ duration: 0.4, ease: "easeOut" }}
       whileHover={{ scale: 1.01 }}
     >
-      <div className="mb-4 flex h-24 w-24 items-center justify-center rounded-full border border-slate-200 bg-white p-1 mx-auto">
+      <div className="mb-5 flex h-32 w-32 items-center justify-center rounded-full border border-slate-200 bg-white p-1 mx-auto">
         {photoSrc ? (
           <img
             src={photoSrc}
             alt={`${name} photo`}
-            className="h-full w-full rounded-full object-contain"
+            className="h-full w-full rounded-full object-cover"
           />
         ) : (
           <span className="text-sm font-semibold text-slate-400">Photo</span>
@@ -39,29 +40,12 @@ export default function TeamCard({
       <h4 className="text-lg font-semibold text-slate-900">{name}</h4>
       <p className="text-sm text-slate-600">{role}</p>
       <p className="mb-3 text-sm font-medium text-slate-500">{year}</p>
-      <div className="flex gap-3 text-slate-500">
-        <a
-          href="#"
-          aria-label="LinkedIn"
-          className="rounded-full p-2 hover:bg-blue-50 hover:text-blue-600"
-        >
-          <FaLinkedin />
-        </a>
-        <a
-          href="#"
-          aria-label="GitHub"
-          className="rounded-full p-2 hover:bg-slate-100 hover:text-slate-900"
-        >
-          <FaGithub />
-        </a>
-        <a
-          href="#"
-          aria-label="Email"
-          className="rounded-full p-2 hover:bg-rose-50 hover:text-rose-600"
-        >
-          <FaEnvelope />
-        </a>
-      </div>
+      <a
+        href={`mailto:${email}`}
+        className="text-base text-slate-600 hover:text-blue-600 transition-colors"
+      >
+        {email}
+      </a>
     </motion.article>
   );
 }

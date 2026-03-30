@@ -75,7 +75,7 @@ export default function Home() {
 
         <section
           id="home"
-          className="grid min-h-screen w-full max-w-7xl gap-12 px-6 py-12 md:grid-cols-2 md:px-10"
+          className="mx-auto grid min-h-screen w-full max-w-7xl gap-12 px-6 py-12 md:grid-cols-2 md:px-10"
         >
           <motion.div
             initial={{ opacity: 0, x: -45 }}
@@ -122,7 +122,7 @@ export default function Home() {
               "/collage/cloudstudy.jpeg",
               "/collage/googlesol.jpeg",
               "/collage/webrelay.jpeg",
-              "/collage/winterBreak.jpeg",
+              "/collage/winterBreak2.jpeg",
             ].map((src, idx) => (
               <motion.div
                 key={idx}
@@ -169,15 +169,24 @@ export default function Home() {
             <h3 className="mb-4 text-2xl font-semibold text-slate-800">
               Domains
             </h3>
-            <div className="no-scrollbar flex gap-4 overflow-x-auto pb-2">
-              {domainCards.map((domain) => (
-                <Card
-                  key={domain.title}
-                  icon={domain.icon}
-                  title={domain.title}
-                  description={domain.description}
-                />
-              ))}
+            <div className="overflow-y-hidden">
+              <div
+                className="no-scrollbar flex gap-4 overflow-x-auto pb-2"
+                style={{ scrollBehavior: 'smooth' }}
+                onWheel={(e) => {
+                  e.preventDefault();
+                  e.currentTarget.scrollLeft += e.deltaY;
+                }}
+              >
+                {domainCards.map((domain) => (
+                  <Card
+                    key={domain.title}
+                    icon={domain.icon}
+                    title={domain.title}
+                    description={domain.description}
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </Section>
@@ -225,7 +234,7 @@ export default function Home() {
                   className="rounded-xl overflow-hidden bg-transparent"
                 >
                   <img
-                    src="/images/GDGgotlatent.png"
+                    src="/images/latent.png"
                     alt="GDG Got Latent Event"
                     className="w-full h-72 object-cover"
                   />
@@ -363,7 +372,7 @@ export default function Home() {
                   className="rounded-xl overflow-hidden bg-transparent"
                 >
                   <img
-                    src="/images/gitSprint.png"
+                    src="/images/git4.png"
                     alt="Git Sprint Event"
                     className="w-full h-72 object-cover"
                   />
@@ -385,6 +394,7 @@ export default function Home() {
                 role="Lead"
                 year="3rd Year CSE"
                 photoSrc="/team/priyanshu.png"
+                email="2023KUCP1065@iiitkota.ac.in"
               />
             </div>
             <div className="rounded-xl border border-slate-100 bg-slate-50 p-4">
@@ -393,6 +403,7 @@ export default function Home() {
                 role="Co-Lead"
                 year="2nd Year CSE"
                 photoSrc="/team/anshuman.png"
+                email="2024kucp1125@iiitkota.ac.in"
               />
             </div>
           </div>
@@ -403,54 +414,63 @@ export default function Home() {
               role="Web Dev Lead"
               year="2nd Year AIDE"
               photoSrc="/team/dhiraj.png"
+              email="2024kuad3019@iiitkota.ac.in"
             />
             <TeamCard
               name="Arjun Sharma"
               role="App Dev Lead"
               year="2nd Year CSE"
               photoSrc="/team/arjun.png"
+              email="2024kucp1057@iiitkota.ac.in"
             />
             <TeamCard
               name="Divyanshi Purohit"
               role="AI/ML Lead"
               year="2nd Year CSE"
               photoSrc="/team/divyasnhi.jpeg"
+              email="2024kucp1055@iiitkota.ac.in"
             />
             <TeamCard
               name="Om Upadhyay"
               role="GenAI Lead"
               year="2nd Year CSE"
               photoSrc="/team/om.png"
+              email="2024kucp1069@iiitkota.ac.in"
             />
             <TeamCard
               name="Parvika Shekhawat"
               role="Cloud Lead"
               year="2nd Year CSE"
-              photoSrc="/team/priyanshu.png"
+              photoSrc="/team/parvika.png"
+              email="2024kucp1111@iiitkota.ac.in"
             />
             <TeamCard
               name="Ayush Singh"
               role="Social Media Lead"
               year="2nd Year ECE"
               photoSrc="/team/ayush.jpeg"
+              email="2024kuec2041@iiitkota.ac.in"
             />
             <TeamCard
               name="Siddhant Dixit"
               role="Event Manager"
               year="2nd Year AIDE"
               photoSrc="/team/siddhant.png"
+              email="2024kuad3023@iiitkota.ac.in"
             />
             <TeamCard
               name="Vishesh Goel"
               role="Event Manager"
               year="2nd Year CSE"
               photoSrc="/team/vishesh.png"
+              email="2024kUCP1068@iiitkota.ac.in"
             />
             <TeamCard
               name="Akash"
               role="Event Manager"
               year="2nd Year ECE"
               photoSrc="/team/akash.jpeg"
+              email="2024kucp1152@iiitkota.ac.in"
             />
           </div>
         </Section>
