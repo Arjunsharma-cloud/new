@@ -61,15 +61,15 @@ const domainCards = [
 
 export default function Home() {
   return (
-    <div className="bg-slate-50 text-slate-800">
+    <div className="bg-white text-slate-800">
       <Navbar />
-      <main className="pt-[7rem]">
-        <div className="w-full overflow-hidden bg-slate-50">
+      <main className="mt-[6rem]">
+        <div className="w-full overflow-hidden bg-white">
           <img
-            src="/images/GDGbaner.png"
+            src="/images/gdgBanner.jpeg"
             alt="GDG Banner"
-            className="h-64 w-full object-contain"
-            style={{ minHeight: "16rem", backgroundColor: "#0f172a" }}
+            className=" w-[1200px] border-solid border-1 border-[#f1f1f1] mx-auto  rounded-2xl"
+           
           />
         </div>
 
@@ -83,7 +83,7 @@ export default function Home() {
             transition={{ duration: 0.75, ease: "easeOut" }}
             className="flex flex-col justify-center gap-6"
           >
-            <p className="inline-flex rounded-full bg-blue-100 px-3 py-1 text-sm font-semibold text-blue-700">
+            <p className="inline-flex rounded-full w-fit bg-blue-100 px-4 py-2 text-sm font-semibold text-blue-700">
               GDG IIIT Kota
             </p>
             <h1 className="text-4xl font-black tracking-tight text-slate-900 md:text-6xl">
@@ -94,12 +94,7 @@ export default function Home() {
               collaborate, and lead the future.
             </p>
             <div className="flex flex-wrap gap-4 pt-2">
-              <a
-                href="#contact"
-                className="rounded-xl bg-blue-600 px-7 py-3 text-sm font-semibold text-white shadow hover:bg-blue-700 transition"
-              >
-                Join Us
-              </a>
+     
               <a
                 href="#events"
                 className="rounded-xl border border-blue-200 bg-white px-7 py-3 text-sm font-semibold text-blue-700 transition hover:bg-blue-50"
@@ -172,7 +167,7 @@ export default function Home() {
             <div className="overflow-y-hidden">
               <div
                 className="no-scrollbar flex gap-4 overflow-x-auto pb-2"
-                style={{ scrollBehavior: 'smooth' }}
+                style={{ scrollBehavior: "smooth" }}
                 onWheel={(e) => {
                   e.preventDefault();
                   e.currentTarget.scrollLeft += e.deltaY;
@@ -496,7 +491,7 @@ export default function Home() {
                 Address: IIIT Kota Permanent Campus
               </p>
             </div>
-            <div className="flex items-center justify-center gap-3 text-2xl text-slate-500">
+            <div className="flex items-center hidden justify-center gap-3 text-2xl text-slate-500">
               <a
                 href="https://www.linkedin.com"
                 target="_blank"
@@ -516,8 +511,7 @@ export default function Home() {
         </Section>
 
         <footer className="mb-12 mt-12 text-center text-sm text-slate-500">
-          © {new Date().getFullYear()} GDG IIIT Kota. Crafted with Tailwind +
-          Framer Motion.
+          © {new Date().getFullYear()} GDG IIIT Kota.  
         </footer>
       </main>
     </div>

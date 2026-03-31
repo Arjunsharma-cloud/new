@@ -21,16 +21,14 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 z-50 w-full border-b border-white/25 bg-white/80 py-1 backdrop-blur-lg transition-all ${
-        shadow ? "shadow-lg" : "shadow-none"
-      }`}
+      className={`fixed top-0 z-50 w-full border-b border-white/25 bg-white py-1  transition-all  `}
     >
-      <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-4 md:px-8">
+      <div className="mx-auto flex w-full max-w-7xl items-center py-3 justify-between px-4 md:px-8">
         <div className="flex items-center gap-2 text-sm font-semibold text-slate-700">
           <img
             src="/images/IIITkotaicon.png"
             alt="IIIT Kota Icon"
-            className="h-12 w-auto object-contain"
+            className="h-14 w-auto object-contain"
           />
         </div>
         <div className="flex items-center gap-2 whitespace-nowrap text-sm font-medium text-slate-600">
